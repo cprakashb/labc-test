@@ -3,12 +3,8 @@ name: LABC CI/CD Pipeline
 on:
   push:
     branches: [main]
-    paths:
-      - 'labc-frontend/**'
   pull_request:
     branches: [main]
-    paths:
-      - 'labc-frontend/**'
 
 jobs:
   build-test-lint:
@@ -27,19 +23,18 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Remove node_modules and lockfile
+      - name: Clean and Install
         run: |
           rm -rf node_modules package-lock.json
           npm cache clean --force
+          npm install
 
-      - name: Install Dependencies Fresh
-        run: npm install
-
-      - name: Run Linter
+      - name: Lint
         run: npm run lint
 
-      - name: Run Tests
+      - name: Test
         run: npm run test
 
-      - name: Run Build
+      - name: Build
         run: npm run build
+
