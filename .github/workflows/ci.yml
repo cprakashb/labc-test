@@ -3,12 +3,20 @@ name: LABC CI/CD Pipeline
 on:
   push:
     branches: [main]
+    paths:
+      - 'labc-frontend/**'
   pull_request:
     branches: [main]
+    paths:
+      - 'labc-frontend/**'
 
 jobs:
   build-test-lint:
     runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: labc-frontend
 
     steps:
       - name: Checkout Code
