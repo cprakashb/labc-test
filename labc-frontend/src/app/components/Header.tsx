@@ -14,7 +14,7 @@ export function Header() {
                 />
 
             </NavbarBrand>
-            <div className="flex md:order-2">
+            <div className="flex md:order-2 mt-10 mb-4 sm:mt-0 sm:mb-0 ">
                 <Button as="a" href="https://chandraprakash.dev/" target="_blank" rel="noopener noreferrer" color="light">
                     View Portfolio
                 </Button>
