@@ -1,0 +1,73 @@
+ 
+ 
+# HTTP Request: Create a reply to an existing comment on a post
+
+POST /api/comments HTTP/1.1
+Accept: application/json, text/plain, */*
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-IN,en-GB;q=0.9,en-US;q=0.8,en;q=0.7,ml;q=0.6,ta;q=0.5,te;q=0.4
+Cache-Control: no-cache
+Connection: keep-alive
+Content-Length: 131
+Content-Type: application/json
+Host: localhost:3001
+Origin: https://labc-test.vercel.app
+Pragma: no-cache
+Sec-Fetch-Dest: empty
+Sec-Fetch-Mode: cors
+Sec-Fetch-Site: cross-site
+User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 16_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.6 Mobile/15E148 Safari/604.1
+
+
+Request Body:
+{
+  "postId": "6846142099b2f78ae68b4512",
+  "parentCommentId": null,
+  "author": "Chandra",
+  "comment": "Creating comment to check HTTP workflow"
+}
+
+
+# Expected HTTP Response (Success)
+
+HTTP/1.1 201 Created
+X-Powered-By: Express
+Access-Control-Allow-Origin: *
+Content-Type: application/json; charset=utf-8
+Content-Length: 211
+ETag: W/"d3-j6fChApJyiiCMmM7gNtTcwky4OA"
+Date: Sun, 08 Jun 2025 23:58:12 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+Response:
+{ "postId":"6846142099b2f78ae68b4512",
+  "parentCommentId":null,
+  "author":"Chandra",
+  "comment":"Creating comment to check HTTP workflow",
+  "_id":"684623932d609247262d8c32",
+  "createdAt":"2025-06-08T23:58:11.987Z",
+  "__v":0
+}
+
+
+# Possible Error Response (Missing Fields)
+
+HTTP/1.1 400 Bad Request
+Content-Type: application/json
+
+Response Body:
+{
+  "error": "postId, author, and comment are required"
+}
+
+
+# Possible Error Response (Unauthorized)
+
+HTTP/1.1 401 Unauthorized
+Content-Type: application/json
+
+Response Body:
+{
+  "error": "Authentication required"
+}
