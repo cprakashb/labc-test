@@ -1,4 +1,7 @@
 //working code without malware check is in /labc-backend/controllers/posts.js
+// To demonstrate my skills and practical understanding of the assignment, I’ve built a mock demo site.
+// https://labc-test.vercel.app/
+// https://github.com/cprakashb/labc-test/tree/main
 
 const express = require('express');
 const multer = require('multer');

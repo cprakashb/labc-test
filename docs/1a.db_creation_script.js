@@ -1,3 +1,8 @@
+// To demonstrate my skills and practical understanding of the assignment, I’ve built a mock demo site.
+// https://labc-test.vercel.app/
+// https://github.com/cprakashb/labc-test/tree/main
+
+
 // Step 1: Select database
 use LABC;
 

@@ -1,3 +1,8 @@
+// To demonstrate my skills and practical understanding of the assignment, I’ve built a mock demo site.
+// https://labc-test.vercel.app/
+// https://github.com/cprakashb/labc-test/tree/main
+
+
 // 1. single post
 db.posts.findOne({ _id: ObjectId("68461c4da4ecdedce44d83b8") })
 
